@@ -1,10 +1,13 @@
+{% load static %}
+{% load bootstrap5 %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./estilo.css">
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static '/css/stylecrelojs.css' %}">
     
     
     <title>Tienda de Relojes | </title>
@@ -16,57 +19,57 @@
     <section class="contenedor">
         <!-- Contenedor de elementos -->
         <div class="contenedor-items">
-            <div class="item">
+            <div class="item"> 
                 <span class="titulo-item">Box Engasse</span>
-                <img src="img/boxengasse.png" alt="" class="img-item">
+                <img src="{% static 'img/boxengasse.png' %}" alt="" class="img-item">
                 <span class="precio-item">$15.000</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
             <div class="item">
                 <span class="titulo-item">English Horse</span>
-                <img src="img/englishrose.png" alt="" class="img-item">
+                <img src="{% static 'img/englishrose.png' %}" alt="" class="img-item">img/englishrose.png
                 <span class="precio-item">$25.000</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
             <div class="item">
                 <span class="titulo-item">Knock Nap</span>
-                <img src="img/knocknap.png" alt="" class="img-item">
+                <img src="{% static 'img/knocknap.png' %}" alt="" class="img-item">
                 <span class="precio-item">$35.000</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
             <div class="item">
                 <span class="titulo-item">La Night</span>
-                <img src="img/lanight.png" alt="" class="img-item">
+                <img src="{% static 'img/lanight.png' %}" alt="" class="img-item">
                 <span class="precio-item">$18.000</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
             <div class="item">
                 <span class="titulo-item">Silver All</span>
-                <img src="img/silverall.png" alt="" class="img-item">
+                <img src="{% static 'img/silverall.png' %}" alt="" class="img-item">
                 <span class="precio-item">$32.000</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
             <div class="item">
                 <span class="titulo-item">Skin Glam</span>
-                <img src="img/skinglam.png" alt="" class="img-item">
+                <img src="{% static 'img/skinglam.png' %}" alt="" class="img-item">
                 <span class="precio-item">$18.000</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
             <div class="item">
                 <span class="titulo-item">Midimix</span>
-                <img src="img/midimix.png" alt="" class="img-item">
+                <img src="{% static 'img/midimix.png' %}" alt="" class="img-item">
                 <span class="precio-item">$54.000</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
             <div class="item">
                 <span class="titulo-item">Sir Blue</span>
-                <img src="img/sirblue.png" alt="" class="img-item">
+                <img src="{% static 'img/sirblue.png' %}" alt="" class="img-item">
                 <span class="precio-item">$32.000</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
             <div class="item">
                 <span class="titulo-item">Middlesteel</span>
-                <img src="img/middlesteel.png" alt="" class="img-item">
+                <img src="{% static 'img/middlesteel.png' %}" alt="" class="img-item">
                 <span class="precio-item">$42.800</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
@@ -122,6 +125,7 @@
             </div>
         </div>
     </section>
-    <script src="./app.js"></script>
+    {% bootstrap_javascript %}
+    <script src="{% static '/js/apprelojs.js' %}"></script>
 </body>
 </html>

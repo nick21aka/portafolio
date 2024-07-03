@@ -133,6 +133,7 @@
         </a>
       </ul>
       </div>
+  
 
 
   
@@ -156,8 +157,8 @@
         <div class="card mb-4">
           <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo }}">
           <div class="card-body">
-              <h5 class="card-title">{{ proyecto.titulo }}</h5>
-              <p class="card-text">{{ proyecto.descripcion }}</p>
+              <h5 class="card-title bg-primary">{{ proyecto.titulo }}</h5>
+              <p class="card-text bg-primary">{{ proyecto.descripcion }}</p>
               <a href="{{ proyecto.link_sitio }}" class="btn btn-primary" target="_blank">Ver sitio</a>
               <a href="{{ proyecto.link_repositorio }}" class="btn btn-secondary" target="_blank">Ver repositorio</a>
           </div>
@@ -175,7 +176,7 @@
 
   <div class="container">
 
-    <h2 class="text-center">Contactanos :)</h2>
+    <h2 class="text-center">Contactanos</h2>
 
     <form method="POST" action="{% url 'contacto_nuevo' %}" id="contactForm" class="needs-validation" novalidate>
 
