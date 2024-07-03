@@ -1,0 +1,238 @@
+{% load static %}
+{% load bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Web</title>
+    <!-- bootstrap 5.3 -->
+    
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static '/css/styleindex.css' %}">
+      <!-- Font Awesome -->
+      <link href="./assets/vendor/font-awesome/fontawesome.css" rel="stylesheet" />
+      <link href="./assets/vendor/font-awesome/brands.css" rel="stylesheet" />
+      <link href="./assets/vendor/font-awesome/solid.css" rel="stylesheet" />
+      <!-- Normalize -->
+      <link rel="stylesheet" href="{% static '/assets/vendor/normalize/normalize.css' %}">
+    
+
+
+   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  
+  
+
+  
+</head>
+<body>
+ <!-- MENU -->
+ <nav class="navbar border-bottom border-body" data-bs-theme="dark">
+   <div class="container-fluid">
+     <a class="navbar-brand" href="#">Menu</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav">
+         <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="#home">Home</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#project">Proyectos</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#seccion-contacto">Contactanos</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#skills">Habilidades</a>
+         </li>
+        
+       </ul>
+     </div>
+    </div>
+  
+  </nav>
+
+  <div class="container">
+
+    <!-- introduccion -->
+    <div class="banner" id="home">
+      
+      
+      <div class="content">
+        <h1>
+          Hola, Soy Nicolas <br> 
+          <div class="gradientText">
+            <div class="job" data-job1="{Silva}" data-job2="{Cardenas}"></div>
+          </div>
+        </h1>
+        <p>
+          Mi Enfoque se basa en la fusion de codigo limpio y diseño cautivador.
+        </p>
+        <div class="find">
+          <h3>Sigueme Aqui</h3>
+          <ul>
+            <a href="https://web.facebook.com/nsilvacardenas1">
+              <li><i class="fa-brands fa-facebook-f"></i></li>
+            </a>
+            <a href="https://www.instagram.com/nsilvacardenas1/">
+              <li><i class="fa-brands fa-instagram"></i></li>
+            </a>
+            <a href="">
+              <li><i class="fa-brands fa-twitter"></i></li>
+            </a>
+          </ul>
+        </div> 
+      </div>
+      <div class="avatar">
+        <img src="{% static '/images/WhatsApp Image 2024-05-08 at 17.06.37 (2).jpeg' %}" alt="">
+      </div>
+    </div>
+    <div class="skill" id="skills">
+      <h1 class="title">Mis habilidades</h1>
+      
+      <div class="ListSkill">
+         <div class="item">
+            <div class="name">HTML5</div>
+            <div class="evaluate" style="--point:80%"></div>
+         </div>
+         <div class="item">
+           <div class="name">CSS</div>
+           <div class="evaluate" style="--point:70%"></div>
+         </div>
+         <div class="item">
+           <div class="name">JavaScript</div>
+           <div class="evaluate" style="--point:50%"></div>
+         </div>
+         <div class="item">
+           <div class="name">Python</div>
+           <div class="evaluate" style="--point:70%"></div>
+         </div>
+      </div>
+    </div>
+    
+
+  
+    
+
+    
+      </div>
+      <h1 class="title">Mis Redes Sociales</h1>
+      <ul class="contact">
+        <a href="https://web.facebook.com/nsilvacardenas1">
+          <li><i class="fa-brands fa-facebook-f"></i></li>
+        </a>
+        <a href="https://www.instagram.com/nsilvacardenas1/">
+          <li><i class="fa-brands fa-instagram"></i></li>
+        </a>
+        <a href="">
+          <li><i class="fa-brands fa-twitter"></i></li>
+        </a>
+      </ul>
+      </div>
+
+
+  
+    
+
+  </div>
+
+ 
+
+
+</div>
+</section>
+
+<!-- Projects section -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="text-center">Mis Proyectos</h2>
+    <div class="row">
+      {% for proyecto in proyectos %}
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo }}">
+          <div class="card-body">
+              <h5 class="card-title">{{ proyecto.titulo }}</h5>
+              <p class="card-text">{{ proyecto.descripcion }}</p>
+              <a href="{{ proyecto.link_sitio }}" class="btn btn-primary" target="_blank">Ver sitio</a>
+              <a href="{{ proyecto.link_repositorio }}" class="btn btn-secondary" target="_blank">Ver repositorio</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</section>
+
+<!-- Contact Section -->
+
+<section id="contact" class="py-5 bg-primary">
+
+  <div class="container">
+
+    <h2 class="text-center">Contactanos :)</h2>
+
+    <form method="POST" action="{% url 'contacto_nuevo' %}" id="contactForm" class="needs-validation" novalidate>
+
+      {% csrf_token %}
+
+      <div class="mb-3">
+
+        <label for="name" class="form-label">Nombre</label>
+
+        <input type="text" class="form-control" id="name" required>
+
+        <div class="invalid-feedback">Please enter your name.</div>
+
+      </div>
+
+      <div class="mb-3">
+
+        <label for="email" class="form-label">Email</label>
+
+        <input type="email" class="form-control" id="email" required>
+
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+
+      </div>
+
+      <div class="mb-3">
+
+        <label for="message" class="form-label">Mensaje</label>
+
+        <textarea class="form-control" id="message" rows="3" required></textarea>
+
+        <div class="invalid-feedback">Please enter your message.</div>
+
+      </div>
+
+      <button type="submit" class="btn btn-black">Enviar</button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+
+{% bootstrap_javascript %}
+<script src="{% static '/js/script.js' %}"></script>
+
+
+      <!-- Bootstrap JS -->
+
+<!-- JQuery -->
+<script src="./assets/vendor/jquery/jquery-3.7.1.min.js"></script>
+<!-- Scripts personalizados -->
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,133 @@
+{% load static %}
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static '/css/stylecarrito.css' %}">
+    <title>Tienda PC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1>Shopping Car</h1> 
+        <img class="carrito" src="{% static './carrito-de-compras.png' %}" alt="carrito">
+    </header>
+    <div id="contenedor" class="contenedor">
+        <div>
+            <img src="{% static './imagen1.webp' %}" alt="producto 1">
+            <div class="informacion">
+                <p>Producto 1</p>
+                <p class="precio">$199<span>.000</span></p>
+                <button class="boton">Comprar</button>
+            </div>
+        </div>
+        <div>
+            <img src="{% static './imagen2.webp' %}" alt="producto 2">
+            <div class="informacion">
+                <p>Producto 2</p>                   
+                <p class="precio">$299<span>.000</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div>
+            <img src="{% static './imagen3.webp' %}" alt="producto 3">
+            <div class="informacion">
+                <p>Producto 3</p>                   
+                <p class="precio">$399<span>.000</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div>
+            <img src="{% static './imagen4.webp' %}" alt="producto 4">
+            <div class="informacion">
+                <p>Producto 4</p>                   
+                <p class="precio">$499<span>.000</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div>
+            <img src="{% static './imagen5.webp' %}" alt="producto 5">
+            <div class="informacion">
+                <p>Producto 5</p>                   
+                <p class="precio">$599<span>.000</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div>
+            <img src="{% static './imagen6.webp' %}" alt="producto 6">
+            <div class="informacion">
+                <p>Producto 6</p>                   
+                <p class="precio">$699<span>.000</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div>
+            <img src="{% static './imagen7.webp' %}" alt="producto 7">
+            <div class="informacion">
+                <p>Producto 7</p>                   
+                <p class="precio">$799<span>.000</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div>
+            <img src="{% static './imagen8.webp' %}" alt="producto 8">
+            <div class="informacion">
+                <p>Producto 8</p>                   
+                <p class="precio">$899<span>.000</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div>
+            <img src="{% static './imagen9.webp' %}" alt="producto 9">
+            <div class="informacion">
+                <p>Producto 9</p>                   
+                <p class="precio">$999<span>.000</span></p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-content">
+      
+        <h2>Contactanos</h2>
+        <form action="https://formsubmit.co/nicosilvac21@gmail.com" method="POST" id="formulario">
+            
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name">  
+
+            <label for="email">Correo Electronico</label>
+            <input type="email" name="email" id="email">
+
+            <label for="subject">Asunto</label>
+            <input type="text" name="subject" id="subject">
+
+            <label for="coments">Comentarios</label>
+            <textarea name="coments" id="coments" cols="30" rows="5"></textarea>
+
+            <input class="btn" type="submit" onclick='return enviarFormulario();' value="Enviar" name="submit">
+       
+
+        </form>
+    </div>
+
+    
+{% bootstrap_javascript %}
+<script src="{% static '/js/apptienda.js' %}"></script>
+</body>
+
+</html>
